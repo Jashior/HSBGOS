@@ -1,0 +1,88 @@
+.standard-card{
+    border: 0px;
+    border-radius: 0;
+}
+
+.card-container{
+    min-width: 150px;
+    max-width: 150px;
+    max-height: 250px;
+    border: 4px solid #87a7b3;
+    border-radius: 3px;
+}
+
+.standard-card-input{
+    min-width: 60px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+input{
+    border-radius: 0;
+    color:#333;
+    font-family: helvetica neue,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    line-height: 50px;
+}
+
+.card-footer{
+    max-height: 90px;
+}
+
+.btn{
+    border-radius: 0;
+    font-size: x-small
+}
+.btn-success{
+    font-weight: bold;
+    font-style: normal; 
+    font-size: x-small;
+}
+.btn-light{
+ 
+}
+
+.card-footer{
+    border-radius: 0;
+}
+
+input[type=text] { text-align:center }
+input[type=number] { text-align:center }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+
+.close-button {
+    z-index: 2;
+    
+    font-size: 2em;
+    border: rgb(255, 255, 255);
+    position: absolute;
+
+    top: -3%;
+    left: 87%;
+
+    color: rgb(252, 252, 252);
+    background-color: #cdc7be;
+    
+
+    width: 25px;
+    height: 25px;
+    padding: 0px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.shadow {
+    -webkit-box-shadow: 3px 3px 5px 6px rgb(76, 255, 22);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px rgb(76, 255, 22);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px rgb(76, 255, 22);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+

@@ -1,0 +1,109 @@
+<div class="card-container">
+  <div class="card border-dark shadow h-100 standard-card">
+    <button
+      type="button"
+      class="btn-xs btn-danger close-button"
+      aria-label="Close"
+      (click)="removeCard()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <!-- <div class="card-header"> -->
+    <div class="row justify-content-between">
+      <div class="col-12">
+        <div class="md-form">
+          <input
+            mdbInput
+            type="text"
+            id="nameform"
+            class="form-control"
+            maxlength="10"
+            value="{{ cardItem.name }}"
+            (change)="updateCardName($event)"
+          />
+        </div>
+      </div>
+      <!-- <div class="row">
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="removeCard()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+    </div>
+    <!-- </div> -->
+
+    <!-- <div class="card-body"> -->
+    <button
+      type="button"
+      class="btn"
+      [ngClass]="{
+        'btn-success': cardItem.effects['Divine Shield'],
+        'btn-light': !cardItem.effects['Divine Shield']
+      }"
+      (click)="toggleDivineShield()"
+    >
+      Divine Shield
+    </button>
+    <button
+      type="button"
+      class="btn"
+      [ngClass]="{
+        'btn-success': cardItem.effects['Taunt'],
+        'btn-light': !cardItem.effects['Taunt']
+      }"
+      (click)="toggleTaunt()"
+    >
+      Taunt
+    </button>
+    <button
+      type="button"
+      class="btn"
+      [ngClass]="{
+        'btn-success': cardItem.effects['Poisonous'],
+        'btn-light': !cardItem.effects['Poisonous']
+      }"
+      (click)="togglePoisonous()"
+    >
+      Poisonous
+    </button>
+    <!-- </div> -->
+
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-6 standard-card-input">
+          <div class="md-form form-group">
+            <label for="attackform">Attack</label>
+            <input
+              type="number"
+              class="form-control"
+              id="attackform"
+              maxlength="3"
+              onChange="if(this.value<=1){this.value='1';}"
+              value="{{ cardItem.attack }}"
+              (change)="updateCardAttack($event)"
+            />
+          </div>
+        </div>
+        <div class="col-6 standard-card-input">
+          <div class="md-form form-group">
+            <label for="healthform">Health</label>
+            <input
+              type="number"
+              class="form-control"
+              id="healthform"
+              maxlength="3"
+              onChange="if(this.value<=1){this.value='1';}"
+              value="{{ cardItem.health }}"
+              (change)="updateCardHealth($event)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

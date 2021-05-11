@@ -1,0 +1,69 @@
+/* Allows you to have 7 columns of equal width (1/7 = 14.28...%) */
+@media (min-width: 768px) { 
+    .col {
+        max-width: 14.28571428571429%
+    }
+}
+
+/* .app-container{
+    background-color: #282828;
+} */
+
+.separator{
+    border-color:#e1f1dd;
+    
+}
+
+.stats{
+    color: #e1f1dd;
+
+}
+.empty-board{
+    color: #e1f1dd;
+    min-height: 13.95rem;
+
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+.board-title-container{
+    padding-left: 1rem;
+    color: white;
+}
+
+.main-title{
+    color: white;
+}
+
+.statnum{
+    color: white;
+    background-color: #273033;
+    border: 0.2em solid #273033 ;
+    border-radius: 0.5em;
+}
+
+
+.shadow {
+    -webkit-box-shadow: 3px 3px 5px 6px rgb(76, 255, 22);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px rgb(76, 255, 22);  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px rgb(76, 255, 22);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+
+
+p {
+    color: #e1f1dd;
+}
+
+button {
+     color: #e1f1dd;
+}
+.board-title{
+    padding-bottom: 0.5rem;
+    padding-top: -1rem;
+    border: 0px;
+    margin: 0px;
+}
+.warning{
+    color:#e1f1dd;
+}
