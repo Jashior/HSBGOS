@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 html, body{
   /* background-color: #282828 */
-  background-color: #766161 !important;
+  background-color: rgb(43, 38, 38) !important;
+  /* background-color: #766161 !important; */
+  font-family:  Calibri, 'Trebuchet MS', sans-serif
 }
 
 /* in-flight clone */

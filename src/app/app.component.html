@@ -1,6 +1,6 @@
 <div class="app-container">
   <div class="container" align="center">
-    <h5 class="main-title">Hearthstone Battleground Ordering Simulator</h5>
+    <h2 class="main-title">Hearthstone Battleground Ordering Simulator</h2>
     <!-- <hr class="separator" /> -->
     <hr />
     <div>
@@ -8,7 +8,11 @@
         <h5 class="board-title">Enemy Board</h5>
         <div class="row justify-content-md-center">
           <div class="col-12 col-lg-5">
-            <button class="btn btn-secondary shadow" (click)="addEnemyCard()">
+            <button
+              class="btn btn-secondary shadow"
+              (click)="addEnemyCard()"
+              [disabled]="loading"
+            >
               Add Enemy Card
             </button>
           </div>
@@ -24,6 +28,7 @@
         <div class="col enemy-board" *ngFor="let cardItem of enemyCards">
           <app-card
             [cardItem]="cardItem"
+            [loading]="loading"
             (cardNameChange)="updateEnemyCardName($event)"
             (removeCardEvent)="onRemoveEnemyCard($event)"
             (cardAttackChange)="updateEnemyCardAttack($event)"
@@ -44,7 +49,11 @@
         <h5 class="">Player Board</h5>
 
         <div class="col-12 col-lg-5">
-          <button class="btn btn-secondary shadow" (click)="addPlayerCard()">
+          <button
+            class="btn btn-secondary shadow"
+            (click)="addPlayerCard()"
+            [disabled]="loading"
+          >
             Add Player Card
           </button>
         </div>
@@ -60,6 +69,7 @@
         <div class="col player-board" *ngFor="let cardItem of playerCards">
           <app-card
             [cardItem]="cardItem"
+            [loading]="loading"
             (cardNameChange)="updatePlayerCardName($event)"
             (removeCardEvent)="onRemovePlayerCard($event)"
             (cardAttackChange)="updatePlayerCardAttack($event)"
@@ -79,13 +89,21 @@
 
       <div class="row container justify-content-md-center">
         <div class="col-6 col-lg-4">
-          <button class="btn btn-secondary shadow" (click)="runBattle()">
+          <button
+            class="btn btn-secondary shadow"
+            (click)="runBattle()"
+            [disabled]="loading"
+          >
             Simulate Battle
           </button>
         </div>
 
         <div class="col-6 col-lg-4">
-          <button class="btn btn-secondary shadow" (click)="runBestOrdering()">
+          <button
+            class="btn btn-secondary shadow"
+            (click)="runBestOrdering()"
+            [disabled]="loading"
+          >
             Simulate Battle & Best Ordering
           </button>
         </div>
@@ -107,7 +125,11 @@
         </p>
       </div>
 
-      <div class="board-title-container">
+      <div class="spinner-border text-info" role="status" *ngIf="loading">
+        <span class="sr-only">Loading...</span>
+      </div>
+
+      <div class="board-title-container" *ngIf="!loading">
         <p>
           The best simulated ordering is:
           <span *ngFor="let cardName of bestOrderingOrder">
@@ -125,13 +147,15 @@
           >&nbsp;
           <br />
           Averaging a value of
-          <span class="statnum shadow">{{ this.bestOrderingValue }}</span> over
-          {{ this.numberOfOrderingSimulations }} simulations
+          <span class="statnum shadow">{{
+            this.bestOrderingValue == undefined ? -1 : this.bestOrderingValue
+          }}</span
+          >&nbsp;over {{ this.numberOfOrderingSimulations }} simulations
         </p>
-        <p *ngIf="numberOfOrderingSimulations < 1000" class="warning">
+        <!-- <p *ngIf="numberOfOrderingSimulations < 1000" class="warning">
           &#x2a;Due to high computation required, number of simulations have
           been reduced and may be inaccurate for this board state
-        </p>
+        </p> -->
       </div>
 
       <!-- <hr class="separator" /> -->

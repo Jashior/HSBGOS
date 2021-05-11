@@ -259,10 +259,10 @@ export function battle(playerMinions: CardItem[], enemyMinions: CardItem[], chec
   
       numberOfSimulations = 1000
       if(playerMinions.length == 7){
-        numberOfSimulations = 30
+        numberOfSimulations = 100
       }
       if(playerMinions.length == 6){
-        numberOfSimulations = 200
+        numberOfSimulations = 500
       }
 
       let highestValue = -1;

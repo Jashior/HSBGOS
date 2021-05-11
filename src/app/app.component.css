@@ -9,6 +9,10 @@
     background-color: #282828;
 } */
 
+hr{
+    background-color: #e1f1dd;
+}
+
 .separator{
     border-color:#e1f1dd;
     
@@ -29,7 +33,7 @@
 
 .board-title-container{
     padding-left: 1rem;
-    color: white;
+    color: #e1f1dd;
 }
 
 .main-title{

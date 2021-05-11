@@ -5,6 +5,7 @@
       class="btn-xs btn-danger close-button"
       aria-label="Close"
       (click)="removeCard()"
+      [disabled]="loading"
     >
       <span aria-hidden="true">&times;</span>
     </button>

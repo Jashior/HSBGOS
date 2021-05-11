@@ -9,6 +9,7 @@ import { CardItem } from '../model/CardItem'
 })
 export class CardComponent implements OnInit {
   @Input() cardItem: any;
+  @Input() loading: any;
   @Output() removeCardEvent = new EventEmitter<string>();
   @Output() cardNameChange = new EventEmitter<{id : string, newValue: string}>();
   @Output() cardAttackChange = new EventEmitter<{id: string, newValue: number}>();

@@ -32,8 +32,8 @@ export class AppComponent {
   loading = false;
 
   ngOnInit() {
-  }
 
+  }
   
   printArray = () => {
     for (let i = 0 ; i < this.enemyCards.length; i++){
@@ -143,8 +143,6 @@ export class AppComponent {
     this.drawRate = result[3]
   }
 
-
-
   testObservable = () => {
     return of(battle(this.playerCards, this.enemyCards, true));
   }
@@ -160,24 +158,45 @@ export class AppComponent {
     return of(battle(this.playerCards, this.enemyCards, true));
   }
 
+
+
+
   runBestOrdering = () => {
-    this.loading = true;
 
     this.runBattle();
+    this.loading = true;
 
-    this.fetchBestOrderingResults().subscribe((bestOrderingResults) => {
-     
-      console.log(`returned LOADING  = ${this.loading}`)
-
+    let  _worker = new  Worker("./app.worker.ts", { type:  'module' });
+    _worker.postMessage({playerCards: this.playerCards, enemyCards: this.enemyCards})
+    // _worker.postMessage({num: 45});
+    _worker.onmessage = ({data}) => {
+      console.log(`data = ${data}`)
+      let bestOrderingResults = data;
       this.bestOrderingValue = bestOrderingResults[0][0]
       this.bestOrderingWinRate = bestOrderingResults[0][1]
       this.bestOrderingLossRate = bestOrderingResults[0][2]
       this.bestOrderingDrawRate = bestOrderingResults[0][3]
       this.bestOrderingOrder = bestOrderingResults[1]
       this.numberOfOrderingSimulations = bestOrderingResults[2]
-      this.loading = false;
-      console.log(`AFTER LODDUNG  = ${this.loading}`)
-    })
+      this.loading=false;
+    }
+
+    
+    // this.runBattle();
+
+    // this.fetchBestOrderingResults().subscribe((bestOrderingResults) => {
+     
+    //   console.log(`returned LOADING  = ${this.loading}`)
+
+      // this.bestOrderingValue = bestOrderingResults[0][0]
+      // this.bestOrderingWinRate = bestOrderingResults[0][1]
+      // this.bestOrderingLossRate = bestOrderingResults[0][2]
+      // this.bestOrderingDrawRate = bestOrderingResults[0][3]
+      // this.bestOrderingOrder = bestOrderingResults[1]
+      // this.numberOfOrderingSimulations = bestOrderingResults[2]
+    //   this.loading = false;
+    //   console.log(`AFTER LODDUNG  = ${this.loading}`)
+    // })
 
     // let bestOrderingResults = battle(this.playerCards, this.enemyCards, true)
     // this.bestOrderingValue = bestOrderingResults[0][0]
@@ -194,3 +213,19 @@ export class AppComponent {
 
   }
 }
+
+
+
+
+  // // Setup worker
+  // if (typeof Worker !== 'undefined') {
+  //   // Create a new
+  //   const worker = new Worker('./app.worker', { type: 'module' });
+  //   worker.onmessage = ({ data }) => {
+  //     console.log(`page got message: ${data}`);
+  //   };
+  //   worker.postMessage('hello');
+  // } else {
+  //   // Web Workers are not supported in this environment.
+  //   // You should add a fallback so that your program still executes correctly.
+  // }
