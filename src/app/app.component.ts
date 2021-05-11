@@ -163,7 +163,7 @@ export class AppComponent {
   runBestOrdering = () => {
     this.loading = true;
 
-    // this.runBattle();
+    this.runBattle();
 
     this.fetchBestOrderingResults().subscribe((bestOrderingResults) => {
      
