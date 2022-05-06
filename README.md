@@ -2,11 +2,11 @@
 
 Simulator for [Hearthstone Battleground's combat phase](https://hearthstone.fandom.com/wiki/Battlegrounds#Combat_Phase), indicating information for your current board state. Offers a simulated win percentage for your current board state, alongside a best ordering functionality to know the best possible ordering available to maximise performance.
 
-![hsbgos](https://user-images.githubusercontent.com/42616071/117890872-d9e9da00-b2ad-11eb-996f-fa0ccc7b6919.png)
-
 # Demo
 
 https://hsbg-ordering-simulator.herokuapp.com
+
+![hsbgos](https://user-images.githubusercontent.com/42616071/117890872-d9e9da00-b2ad-11eb-996f-fa0ccc7b6919.png)
 
 ## Development server
 
