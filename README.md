@@ -4,12 +4,15 @@ Simulator for [Hearthstone Battleground's combat phase](https://hearthstone.fand
 
 ![hsbgos](https://user-images.githubusercontent.com/42616071/117890872-d9e9da00-b2ad-11eb-996f-fa0ccc7b6919.png)
 
+# Demo
+
+https://hsbg-ordering-simulator.herokuapp.com
+
 ## Development server
 
 Run `npm install` once cloned.
 
 Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 
 ## Further help
 
